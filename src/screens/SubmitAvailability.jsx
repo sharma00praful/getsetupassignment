@@ -19,6 +19,7 @@ import {
   getWeekNumber,
   makeDate,
   parseDate,
+  removeByAttr,
 } from "../helper/helperFunctions";
 
 const SubmitAvailability = () => {
@@ -187,7 +188,24 @@ const SubmitAvailability = () => {
     }
     return noError;
   };
-
+  const removeSlot = (date, from, to) => {
+    const availabilityArray = [...availability];
+    availabilityArray.map(function (item, index) {
+      if (item.date === date) {
+        removeByAttr(item.slots, from, to);
+      }
+      return null;
+    });
+    setAvailability(availabilityArray);
+  };
+  const editSlot = (date, from, to) => {
+    removeSlot(date, from, to);
+    setSlotStartTime(from);
+    setSlotEndTime(to);
+    setClockInputType("Start");
+    setClockInputInitialTime(from);
+    handleClockInputShow();
+  };
   return (
     <Container className="mt-5 main-container">
       <Row>
@@ -292,6 +310,8 @@ const SubmitAvailability = () => {
             <Col xs={12} md={12} className="slot-list-container">
               <SlotList
                 availability={availability}
+                removeSlot={removeSlot}
+                editSlot={editSlot}
                 selectedDate={selectedDate}
                 makeDate={makeDate}
               />

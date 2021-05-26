@@ -3,7 +3,13 @@ import Button from "react-bootstrap/Button";
 import { FaTimes, FaPen } from "react-icons/fa";
 import ListGroup from "react-bootstrap/ListGroup";
 
-const SlotList = ({ availability, selectedDate, makeDate }) => {
+const SlotList = ({
+  availability,
+  removeSlot,
+  editSlot,
+  selectedDate,
+  makeDate,
+}) => {
   return (
     <ListGroup>
       {availability.map(function (itemDate) {
@@ -21,10 +27,22 @@ const SlotList = ({ availability, selectedDate, makeDate }) => {
                     {itemDate.date} {itemSlot.from} - {itemSlot.to}
                   </div>
                   <div className="slot-list-button-container">
-                    <Button variant="danger" className="slot-list-button">
+                    <Button
+                      variant="danger"
+                      className="slot-list-button"
+                      onClick={() => {
+                        removeSlot(itemDate.date, itemSlot.from, itemSlot.to);
+                      }}
+                    >
                       <FaTimes />
                     </Button>
-                    <Button variant="success" className="slot-list-button">
+                    <Button
+                      variant="success"
+                      className="slot-list-button"
+                      onClick={() => {
+                        editSlot(itemDate.date, itemSlot.from, itemSlot.to);
+                      }}
+                    >
                       <FaPen />
                     </Button>
                   </div>

@@ -37,3 +37,18 @@ export const makeDate = (date) => {
 export const parseDate = (date, time) => {
   return Date.parse(`${makeDate(date)} ${time}`);
 };
+export var removeByAttr = function (arr, from, to) {
+  var i = arr.length;
+  while (i--) {
+    if (
+      arr[i] &&
+      arr[i].hasOwnProperty("from") &&
+      arguments.length > 2 &&
+      arr[i]["from"] === from &&
+      arr[i]["to"] === to
+    ) {
+      arr.splice(i, 1);
+    }
+  }
+  return arr;
+};
