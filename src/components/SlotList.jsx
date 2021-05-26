@@ -10,6 +10,36 @@ const SlotList = ({
   selectedDate,
   makeDate,
 }) => {
+  const ListItem = ({ date, from, to }) => {
+    return (
+      <ListGroup.Item bsPrefix="slot-list-group-item" key={from + to}>
+        <div className="slot-list-text">
+          {date} {from} - {to}
+        </div>
+        <div className="slot-list-button-container">
+          <Button
+            variant="danger"
+            className="slot-list-button"
+            onClick={() => {
+              removeSlot(date, from, to);
+            }}
+          >
+            <FaTimes />
+          </Button>
+          <Button
+            variant="success"
+            className="slot-list-button"
+            onClick={() => {
+              editSlot(date, from, to);
+            }}
+          >
+            {" "}
+            <FaPen />
+          </Button>
+        </div>
+      </ListGroup.Item>
+    );
+  };
   return (
     <ListGroup>
       {availability.map(function (itemDate) {
@@ -19,34 +49,11 @@ const SlotList = ({
             .reverse()
             .map(function (itemSlot) {
               return (
-                <ListGroup.Item
-                  bsPrefix="slot-list-group-item"
-                  key={itemSlot.from + itemSlot.to}
-                >
-                  <div className="slot-list-text">
-                    {itemDate.date} {itemSlot.from} - {itemSlot.to}
-                  </div>
-                  <div className="slot-list-button-container">
-                    <Button
-                      variant="danger"
-                      className="slot-list-button"
-                      onClick={() => {
-                        removeSlot(itemDate.date, itemSlot.from, itemSlot.to);
-                      }}
-                    >
-                      <FaTimes />
-                    </Button>
-                    <Button
-                      variant="success"
-                      className="slot-list-button"
-                      onClick={() => {
-                        editSlot(itemDate.date, itemSlot.from, itemSlot.to);
-                      }}
-                    >
-                      <FaPen />
-                    </Button>
-                  </div>
-                </ListGroup.Item>
+                <ListItem
+                  from={itemSlot.from}
+                  to={itemSlot.to}
+                  date={itemDate.date}
+                />
               );
             });
         } else return null;
@@ -58,22 +65,11 @@ const SlotList = ({
             .reverse()
             .map(function (itemSlot) {
               return (
-                <ListGroup.Item
-                  bsPrefix="slot-list-group-item"
-                  key={itemSlot.from + itemSlot.to}
-                >
-                  <div className="slot-list-text">
-                    {itemDate.date} {itemSlot.from} - {itemSlot.to}
-                  </div>
-                  <div className="slot-list-button-container">
-                    <Button variant="danger" className="slot-list-button">
-                      <FaTimes />
-                    </Button>
-                    <Button variant="success" className="slot-list-button">
-                      <FaPen />
-                    </Button>
-                  </div>
-                </ListGroup.Item>
+                <ListItem
+                  from={itemSlot.from}
+                  to={itemSlot.to}
+                  date={itemDate.date}
+                />
               );
             });
         } else return null;

@@ -37,7 +37,7 @@ export const makeDate = (date) => {
 export const parseDate = (date, time) => {
   return Date.parse(`${makeDate(date)} ${time}`);
 };
-export var removeByAttr = function (arr, from, to) {
+export const removeByAttr = function (arr, from, to) {
   var i = arr.length;
   while (i--) {
     if (
@@ -51,4 +51,14 @@ export var removeByAttr = function (arr, from, to) {
     }
   }
   return arr;
+};
+export const haveSlots = (availability) => {
+  let isSlotAvailable = false;
+  if (availability.length > 0) {
+    availability.map(function (item, index) {
+      if (item.slots.length > 0) isSlotAvailable = true;
+      return null;
+    });
+  }
+  return isSlotAvailable;
 };

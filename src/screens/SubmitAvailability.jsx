@@ -20,6 +20,7 @@ import {
   makeDate,
   parseDate,
   removeByAttr,
+  haveSlots,
 } from "../helper/helperFunctions";
 
 const SubmitAvailability = () => {
@@ -196,6 +197,7 @@ const SubmitAvailability = () => {
       }
       return null;
     });
+
     setAvailability(availabilityArray);
   };
   const editSlot = (date, from, to) => {
@@ -204,6 +206,7 @@ const SubmitAvailability = () => {
     setSlotEndTime(to);
     setClockInputType("Start");
     setClockInputInitialTime(from);
+    setSelectedDate(new Date(date));
     handleClockInputShow();
   };
   return (
@@ -317,18 +320,20 @@ const SubmitAvailability = () => {
               />
             </Col>
           </Row>
-          <Row>
-            <Col xs="12" md="12">
-              <Button
-                variant="default"
-                onClick={handleClockInputShow}
-                className="submit-availability-button"
-              >
-                <FaCheck className="button-icon" />
-                <span className="button-text"> Submit Availability</span>
-              </Button>
-            </Col>
-          </Row>
+          {haveSlots(availability) ? (
+            <Row>
+              <Col xs="12" md="12">
+                <Button
+                  variant="default"
+                  onClick={handleClockInputShow}
+                  className="submit-availability-button"
+                >
+                  <FaCheck className="button-icon" />
+                  <span className="button-text"> Submit Availability</span>
+                </Button>
+              </Col>
+            </Row>
+          ) : null}
           <ClockInput
             time={clockInputInitialTime}
             type={clockInputType}
