@@ -31,10 +31,10 @@ this screen have a calendar like UI which will let user choose a week with one o
 
 
 # 2. View Availability Screen: 
-this screen have calander like UI which will let user View a all selected slots.
+this screen have calendar like UI which will let user View a all selected slots.
 
 #features:
-1. Calander like UI for viewing selected slots. (when loaded a request will hit the backend to fetch the data)
+1. Calendar like UI for viewing selected slots. (when loaded a request will hit the backend to fetch the data)
 2. user can switch between views like month,week,day.
 
 
