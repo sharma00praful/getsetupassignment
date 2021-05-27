@@ -6,8 +6,8 @@ For this project i have used:
 React.js
 Bootstrap
 React-router-dom
-react-calendar
-react-big-calendar
+react-calandar
+react-big-calandar
 font-awesome icons
 Heroku (for deployment)
 
@@ -31,7 +31,7 @@ this screen have a calendar like UI which will let user choose a week with one o
 
 
 # 2. View Availability Screen: 
-this screen have a calander like UI which will let user View a all selected slots.
+this screen have calander like UI which will let user View a all selected slots.
 
 #features:
 1. Calander like UI for viewing selected slots. (when loaded a request will hit the backend to fetch the data)
