@@ -6,8 +6,8 @@ For this project i have used:
 React.js
 Bootstrap
 React-router-dom
-react-calandar
-react-big-calandar
+react-calendar
+react-big-calendar
 font-awesome icons
 Heroku (for deployment)
 
