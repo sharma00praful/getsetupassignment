@@ -13,6 +13,7 @@ import ErrorModal from "../components/ErrorModal";
 import WarningModal from "../components/WarningModal";
 import { FaCheck, FaPlusSquare } from "react-icons/fa";
 import SlotList from "../components/SlotList";
+import { useHistory } from "react-router-dom";
 import {
   calculateWeekStartDate,
   calculateWeekEndDate,
@@ -21,6 +22,7 @@ import {
   parseDate,
   removeByAttr,
   haveSlots,
+  handleSubmitAvailability,
 } from "../helper/helperFunctions";
 
 const SubmitAvailability = () => {
@@ -52,6 +54,7 @@ const SubmitAvailability = () => {
   const [clockInputType, setClockInputType] = useState("");
   const [clockInputShow, setClockInputShow] = useState(false);
   const dateStringArray = selectedDate.toString().split(" "); //to store timestamp in string array for showing date
+  const history = useHistory();
 
   const errorModalHandleClose = () => {
     setIsError({ status: false, message: "No Error" });
@@ -180,8 +183,10 @@ const SubmitAvailability = () => {
                 "You Already Have a slot in these times, Please Re-Enter.",
             });
           }
+          return null;
         });
       }
+      return null;
     });
 
     if (noError && checkLongPeriod()) {
@@ -209,6 +214,13 @@ const SubmitAvailability = () => {
     setSelectedDate(new Date(date));
     handleClockInputShow();
   };
+  const HandlePush = (url) => {
+    history.push({ pathname: url });
+  };
+  const handleAPISuccess = () => {
+    HandlePush("/view-availability");
+  };
+
   return (
     <Container className="mt-5 main-container">
       <Row>
@@ -325,7 +337,14 @@ const SubmitAvailability = () => {
               <Col xs="12" md="12">
                 <Button
                   variant="default"
-                  onClick={handleClockInputShow}
+                  onClick={() => {
+                    handleSubmitAvailability(
+                      availability,
+                      week,
+                      12345,
+                      handleAPISuccess
+                    );
+                  }}
                   className="submit-availability-button"
                 >
                   <FaCheck className="button-icon" />

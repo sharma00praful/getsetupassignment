@@ -62,3 +62,37 @@ export const haveSlots = (availability) => {
   }
   return isSlotAvailable;
 };
+export const handleSubmitAvailability = (
+  availability,
+  week,
+  userId,
+  handleAPISuccess
+) => {
+  console.log(
+    JSON.stringify({
+      userId: userId,
+      weekNumber: week,
+      availability: availability,
+    })
+  );
+
+  fetch("http://localhost/availability", {
+    method: "post",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      userId: userId,
+      weekNumber: week,
+      availability: availability,
+    }),
+  })
+    .then((response) => {
+      if (response.status === 200) {
+        handleAPISuccess();
+      }
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+
+  return null;
+};
