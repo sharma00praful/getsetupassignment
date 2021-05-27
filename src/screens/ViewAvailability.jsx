@@ -53,7 +53,7 @@ const ViewAvailability = () => {
   };
 
   useEffect(() => {
-    fetch("http://localhost/getavailability", {
+    fetch("http://3.108.101.52:50001/getavailability", {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

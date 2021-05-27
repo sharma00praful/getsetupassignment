@@ -76,7 +76,7 @@ export const handleSubmitAvailability = (
     })
   );
 
-  fetch("http://localhost/availability", {
+  fetch("http://3.108.101.52:50001/availability", {
     method: "post",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
