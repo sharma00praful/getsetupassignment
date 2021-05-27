@@ -53,7 +53,7 @@ const ViewAvailability = () => {
   };
 
   useEffect(() => {
-    fetch("http://3.108.101.52:50001/getavailability", {
+    fetch("https://gtstupbckend.nbb.world/getavailability", {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

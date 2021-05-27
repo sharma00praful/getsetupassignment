@@ -76,7 +76,7 @@ export const handleSubmitAvailability = (
     })
   );
 
-  fetch("http://3.108.101.52:50001/availability", {
+  fetch("https://gtstupbckend.nbb.world/availability", {
     method: "post",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
