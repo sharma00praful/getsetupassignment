@@ -84,7 +84,7 @@ const ViewAvailability = () => {
             className="add-slot-button"
             onClick={handleChangeSlots}
           >
-            <span className="button-text">Change Slots</span>
+            <span className="button-text">Add Slots</span>
           </Button>
         </Col>
       </Row>
@@ -96,7 +96,7 @@ const ViewAvailability = () => {
               events={events}
               startAccessor="start"
               endAccessor="end"
-              style={{ height: 650 }}
+              style={{ height: 550 }}
             />
           </div>
         </Col>
