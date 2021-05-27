@@ -27,6 +27,7 @@ import {
 
 const SubmitAvailability = () => {
   const year = new Date().getFullYear();
+  const history = useHistory();
 
   const [availability, setAvailability] = useState([]); //array state to store availability {{week1:{{from:value,to:value},{from:value,to:value},...},week2:{from:value,to:value}}
   const [week, setWeek] = useState(getWeekNumber(new Date())); //set to current week number initially
@@ -54,7 +55,6 @@ const SubmitAvailability = () => {
   const [clockInputType, setClockInputType] = useState("");
   const [clockInputShow, setClockInputShow] = useState(false);
   const dateStringArray = selectedDate.toString().split(" "); //to store timestamp in string array for showing date
-  const history = useHistory();
 
   const errorModalHandleClose = () => {
     setIsError({ status: false, message: "No Error" });
@@ -194,6 +194,7 @@ const SubmitAvailability = () => {
     }
     return noError;
   };
+
   const removeSlot = (date, from, to) => {
     const availabilityArray = [...availability];
     availabilityArray.map(function (item, index) {
@@ -205,6 +206,7 @@ const SubmitAvailability = () => {
 
     setAvailability(availabilityArray);
   };
+
   const editSlot = (date, from, to) => {
     removeSlot(date, from, to);
     setSlotStartTime(from);
@@ -214,21 +216,36 @@ const SubmitAvailability = () => {
     setSelectedDate(new Date(date));
     handleClockInputShow();
   };
+
   const HandlePush = (url) => {
     history.push({ pathname: url });
   };
+
   const handleAPISuccess = () => {
     HandlePush("/view-availability");
+  };
+
+  const handleViewSlots = () => {
+    history.push({ pathname: "/view-availability" });
   };
 
   return (
     <Container className="mt-5 main-container">
       <Row>
-        <Col xs={2} md={1} sm={1}>
+        <Col sm={2}>
           <Image src={GetSetUpLogo} />
         </Col>
-        <Col xs={10} md={11} sm={11} className="main-heading-container">
+        <Col className="main-heading-container">
           <h4>Submit Your Availability</h4>
+        </Col>
+        <Col sm={3}>
+          <Button
+            variant="default"
+            className="add-slot-button"
+            onClick={handleViewSlots}
+          >
+            <span className="button-text">View All Slots</span>
+          </Button>
         </Col>
       </Row>
       <Row>

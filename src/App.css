@@ -253,3 +253,8 @@
 .rbc-toolbar button {
   box-shadow: 0px 0px 10px #ccc;
 }
+.view-heading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
