@@ -34,7 +34,7 @@ features:
 this screen have a calander like UI which will let user View a all selected slots.
 
 features:
-1. Calander like UI for viewing selected slots.
+1. Calander like UI for viewing selected slots. (when loaded a request will hit the backend to fetch the data)
 2. user can switch between views like month,week,day.
 
 
