@@ -14,15 +14,15 @@ Heroku (for deployment)
 There are two screen in this front end APP.
 
 1. Submit Availability Screen
-this screen have a calander like UI which will let user choose a week with one or many dates in it. and for a date, user can choose time slots for availability.
+this screen have a calendar like UI which will let user choose a week with one or many dates in it. and for a date, user can choose time slots for availability.
 
 features:
-1. Calander UI for week and date selection on the left.
+1. Calendar UI for week and date selection on the left.
 2. Clock Input for time selection on the right.
 3. user can choose as many time slots as he can.
-4. script trigger a warning to encourage a guide to take some break in beetween if he/she choose a time slot which have more then 3 hours. (user can choose to re-enter or can proceed with the current selection)
+4. script trigger a warning to encourage a guide to take some break in between if he/she choose a time slot which have more then 3 hours. (user can choose to re-enter or can proceed with the current selection)
 5. App will not allow user to input same time slot twice for a single day.
-6. App will not allow user to input a time slot which are interfaring with current selected time slots for a single day.
+6. App will not allow user to input a time slot which are Interfering with current selected time slots for a single day.
 7. When user switch between dates, App will smartly show the time slots selected for that day on the top of the list.
 8. Whenever a time slot is selected it will put on the top of the list.
 9. User can reduce or expand time slots in this screen.
