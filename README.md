@@ -13,10 +13,10 @@ Heroku (for deployment)
 
 There are two screen in this front end APP.
 
-1. Submit Availability Screen
+#1. Submit Availability Screen
 this screen have a calendar like UI which will let user choose a week with one or many dates in it. and for a date, user can choose time slots for availability.
 
-features:
+#features:
 1. Calendar UI for week and date selection on the left.
 2. Clock Input for time selection on the right.
 3. user can choose as many time slots as he can.
@@ -30,10 +30,10 @@ features:
 11. After all listing, user can finally submit the slots for the week. this will trigger post request to backend and on successful response, this will take user to the next screen.
 
 
-2. View Availability Screen
+#2. View Availability Screen
 this screen have a calander like UI which will let user View a all selected slots.
 
-features:
+#features:
 1. Calander like UI for viewing selected slots. (when loaded a request will hit the backend to fetch the data)
 2. user can switch between views like month,week,day.
 
