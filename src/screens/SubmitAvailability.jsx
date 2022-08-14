@@ -5,8 +5,7 @@ import Col from "react-bootstrap/Col";
 import Image from "react-bootstrap/Image";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
-import GetSetUpLogo from "../resources/getsetuplogo.png";
-import ProfilePic from "../resources/profile.jpg";
+import ProfilePic from "../resources/person.png";
 import Button from "react-bootstrap/Button";
 import ClockInput from "../components/ClockInput";
 import ErrorModal from "../components/ErrorModal";
@@ -233,7 +232,10 @@ const SubmitAvailability = () => {
     <Container className="mt-5 main-container">
       <Row>
         <Col sm={2}>
-          <Image src={GetSetUpLogo} />
+          <Image
+            width={100}
+            src="https://www.freepnglogos.com/uploads/company-logo-png/company-logo-transparent-png-19.png"
+          />
         </Col>
         <Col className="main-heading-container">
           <h4>Submit Your Availability</h4>

@@ -1,17 +1,17 @@
 export const calculateWeekStartDate = (year, week) => {
   //1st of January + 7 days for each week
-  const simpleDate = new Date(2021, 0, 1 + week * 7);
+  const simpleDate = new Date(2022, 0, 1 + week * 7);
   const dayOfWeek = simpleDate.getDay();
   const ISOweekStart = simpleDate;
   ISOweekStart.setDate(simpleDate.getDate() - dayOfWeek + 1);
   //if first day of week is of previous year return 1st of January
-  if (ISOweekStart.getFullYear() !== 2021) return new Date(year, 0, 1);
+  if (ISOweekStart.getFullYear() !== 2022) return new Date(year, 0, 1);
   else return ISOweekStart;
 };
 
 export const calculateWeekEndDate = (year, week) => {
   //1st of January + 7 days for each week
-  const simpleDate = new Date(2021, 0, 1 + week * 7);
+  const simpleDate = new Date(2022, 0, 1 + week * 7);
   const dayOfWeek = simpleDate.getDay();
   const ISOweekEnd = simpleDate;
   ISOweekEnd.setDate(simpleDate.getDate() + (7 - dayOfWeek));

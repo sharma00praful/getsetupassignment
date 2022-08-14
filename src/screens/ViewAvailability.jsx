@@ -12,7 +12,6 @@ import "react-big-calendar/lib/css/react-big-calendar.css";
 import moment from "moment";
 
 import "../App.scss";
-import GetSetUpLogo from "../resources/getsetuplogo.png";
 
 const localizer = momentLocalizer(moment);
 
@@ -73,7 +72,10 @@ const ViewAvailability = () => {
     <Container className="mt-5 main-container">
       <Row>
         <Col sm={3}>
-          <Image src={GetSetUpLogo} />
+          <Image
+            width={100}
+            src="https://www.freepnglogos.com/uploads/company-logo-png/company-logo-transparent-png-19.png"
+          />
         </Col>
         <Col className="view-heading-container">
           <h4>Your Availability</h4>

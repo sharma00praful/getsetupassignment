@@ -1,4 +1,3 @@
-# GetSetUp front end Assignment
 This app is deployed on heroku with url https://getsetup.herokuapp.com/ with backend apis on an aws instance, refer backend project readme here : https://github.com/sharma00praful/getsetupbackend
 
 Important Note: If HEROKU didn't repond at the first place, try to reload it as HEROKU free tier make the app sleep if no activity is made for 30 minutes. Although I have create a cron in my aws server to ping it every 25 minutes. :D But not sure if this hack will work.
@@ -15,10 +14,12 @@ Heroku (for deployment)
 
 There are two screen in this front end APP.
 
-# 1. Submit Availability Screen: 
+# 1. Submit Availability Screen:
+
 this screen has a calendar like UI which let the user choose a week with one or many dates in it. and for a date, user can choose time slots for availability.
 
 #features:
+
 1. Calendar UI for week and date selection on the left.
 2. Clock Input for time selection on the right.
 3. user can choose as many time slots as he can.
@@ -34,18 +35,17 @@ this screen has a calendar like UI which let the user choose a week with one or 
 Screenshot:
 <img src="https://www.nearbybazar.com/image/assignment/gtstup1.png"/>
 
+# 2. View Availability Screen:
 
-# 2. View Availability Screen: 
 this screen have calendar like UI which will let user View a all selected slots.
 
 #features:
+
 1. Calendar like UI for viewing selected slots. (when loaded a request will hit the backend to fetch the data)
 2. user can switch between views like month,week,day.
 
 Screenshot:
 <img src="https://www.nearbybazar.com/image/assignment/gtstup2.png"/>
-
-
 
 after cloning,
 run:
