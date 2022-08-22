@@ -1,5 +1,4 @@
-This app is deployed on heroku with url https://getsetup.herokuapp.com/ with backend apis on an aws instance, refer backend project readme here : https://github.com/sharma00praful/getsetupbackend
-
+This app is deployed on heroku with url https://priyawork1.herokuapp.com/ with backend apis on an aws instance,
 Important Note: If HEROKU didn't repond at the first place, try to reload it as HEROKU free tier make the app sleep if no activity is made for 30 minutes. Although I have create a cron in my aws server to ping it every 25 minutes. :D But not sure if this hack will work.
 
 For this project i have used:
