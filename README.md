@@ -1,70 +1,53 @@
-# Getting Started with Create React App
+This app is deployed on heroku with url https://priyawork1.herokuapp.com/ with backend apis on an aws instance,
+Important Note: If HEROKU didn't repond at the first place, try to reload it as HEROKU free tier make the app sleep if no activity is made for 30 minutes. Although I have create a cron in my aws server to ping it every 25 minutes. :D But not sure if this hack will work.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+For this project i have used:
 
-## Available Scripts
+React.js
+Bootstrap
+React-router-dom
+react-calendar
+react-big-calendar
+font-awesome icons
+Heroku (for deployment)
 
-In the project directory, you can run:
+There are two screen in this front end APP.
 
-### `npm start`
+# 1. Submit Availability Screen:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+this screen has a calendar like UI which let the user choose a week with one or many dates in it. and for a date, user can choose time slots for availability.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+#features:
 
-### `npm test`
+1. Calendar UI for week and date selection on the left.
+2. Clock Input for time selection on the right.
+3. user can choose as many time slots as he can.
+4. script trigger a warning to encourage a guide to take some break in between if he/she chooses a time slot which has more then 3 hours. (user can choose to re-enter or can proceed with the current selection)
+5. App will not allow user to input same time slot twice for a single day.
+6. App will not allow user to input a time slot which are Interfering with current selected time slots for a single day. (suppose if we already have 2PM - 4PM slot for 27/05/2021 and user is trying to put a 3PM-5PM slot, App will pop an error stating that "You Already Have a slot in these times".)
+7. When user switch between dates, App will smartly show the time slots selected for that day on the top of the list.
+8. Whenever a time slot is selected it will put on the top of the list.
+9. User can reduce or expand time slots in this screen.
+10. User can view the time slots which are selected in the list below the input area, and also can anytime switch between submit screen and view screen.
+11. After all listing, user can finally submit the slots for the week. this will trigger post request to backend and on successful response, this will take user to the next screen.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Screenshot:
+<img src="https://www.nearbybazar.com/image/assignment/gtstup1.png"/>
 
-### `npm run build`
+# 2. View Availability Screen:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+this screen have calendar like UI which will let user View a all selected slots.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#features:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Calendar like UI for viewing selected slots. (when loaded a request will hit the backend to fetch the data)
+2. user can switch between views like month,week,day.
 
-### `npm run eject`
+Screenshot:
+<img src="https://www.nearbybazar.com/image/assignment/gtstup2.png"/>
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+after cloning,
+run:
+npm install
+npm start
+(the project will start at http://localhost:3000)
